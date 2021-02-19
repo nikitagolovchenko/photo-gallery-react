@@ -11,6 +11,7 @@ import {
   SET_LOADING,
   SignInData,
   SET_SUCCESS,
+  SIGN_OUT
 } from './../types';
 
 // Create user
