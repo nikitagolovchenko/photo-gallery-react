@@ -1,28 +1,32 @@
+import { Button } from '@material-ui/core';
 import React, { ButtonHTMLAttributes, FC } from 'react';
 
 // extends ButtonHTMLAttributes<HTMLButtonElement> - чтобы получить свойства html элемента кнопки:
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   className?: string;
+  color: "inherit" | "primary" | "secondary" | "default" | undefined;
 }
 
-const Button: FC<ButtonProps> = ({
+const ButtonUI: FC<ButtonProps> = ({
   text,
   className,
   onClick,
   type,
   disabled,
+  color
 }) => {
   return (
-    <button
+    <Button
       type={type}
       className={`button ${className}`}
       onClick={onClick}
       disabled={disabled}
+      color={color}
     >
       {text}
-    </button>
+    </Button>
   );
 };
 
-export default Button;
+export default ButtonUI;

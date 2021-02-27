@@ -1,3 +1,5 @@
+import { Box } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 import React, { FC } from 'react';
 
 interface MessageProps {
@@ -6,20 +8,20 @@ interface MessageProps {
 }
 
 const Message: FC<MessageProps> = ({ msg, type }) => {
-  let typeClass = '';
+  let typeClass: 'success' | 'info' | 'warning' | 'error' | undefined = 'info';
 
   if (type === 'danger') {
-    typeClass = 'is-danger';
+    typeClass = 'error';
   }
 
   if (type === 'success') {
-    typeClass = 'is-success';
+    typeClass = 'success';
   }
 
   return (
-    <article className={`message ${typeClass}`}>
-      <div className='message-body'>{msg}</div>
-    </article>
+    <Box textAlign='left' mb={2}>
+      <Alert severity={typeClass}>{msg}</Alert>
+    </Box>
   );
 };
 

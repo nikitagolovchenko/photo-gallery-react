@@ -1,3 +1,4 @@
+import { Box, TextField } from '@material-ui/core';
 import React, { FC, InputHTMLAttributes } from 'react';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -13,21 +14,21 @@ const Input: FC<InputProps> = ({
   label,
 }) => {
   return (
-    <div className='field'>
-      <div className='control'>
-        <label htmlFor={name}>{label}</label>
-        <input
-          type={type}
-          className='input'
-          placeholder={placeholder}
-          value={value}
-          name={name}
-          id={name}
-          onChange={onChange}
-          required
-        />
-      </div>
-    </div>
+    <Box mb={2}>
+      <TextField
+        fullWidth
+        type={type}
+        className='input'
+        placeholder={placeholder}
+        value={value}
+        name={name}
+        id={name}
+        onChange={onChange}
+        required
+        label={label}
+        autoComplete='off'
+      />
+    </Box>
   );
 };
 

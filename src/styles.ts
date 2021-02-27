@@ -5,7 +5,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     position: 'relative',
     width: '100%',
     overflow: 'hidden',
-    fontSize: '1rem',
+  },
+  navTitle: {
+    marginRight: 'auto',
+    fontSize: theme.typography.h6.fontSize,
+  },
+  header: {
+    marginBottom: theme.spacing(3),
   },
 }));
 
